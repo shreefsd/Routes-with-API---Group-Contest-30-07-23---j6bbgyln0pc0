@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/App.css';
 import Navbar from './Navbar';
-import {Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from './Home';
 import Top from './Top';
 import Contact from './Contact';
@@ -9,7 +9,6 @@ import Contact from './Contact';
 const App = () => {
 
   return (
-    <Router>
     <div id="main">
       <Navbar />
       <div className='container'>
@@ -20,7 +19,6 @@ const App = () => {
           </Routes>
       </div>
     </div>
-    </Router>
   )
 }
 
