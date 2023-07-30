@@ -2,21 +2,30 @@ import React, { useState, useEffect } from 'react';
 
 function Top() {
     const [cryptoArr, setCryptoArr] = useState([]);
-
+    useEffect(() => {
+        fetch('https://api.coinlore.net/api/tickers/?start=0&limit=10')
+        .then((resp) => resp.json)
+        .then((data) => {
+            setCryptoArr(data.data);
+        })
+        .catch((error) => {
+        console.error(error);
+      });
+    },[]);
     return (
         <div className='top-container'>
             <h1>Top 10 Global Crypto Coins</h1>
             <div className='display-container'>
-
+                {cryptoArr.map((ele) => (
                 <div className='coin-container'>
-                    <p className='rank-para'>Rank #rank</p>
-                    <h3 className='coin-symbol'>name (symbol)</h3>
-                    <p className='price-para'>Price: price_usd</p>
+                    <p className='rank-para'>Rank #{ele.rank}</p>
+                    <h3 className='coin-symbol'>{ele.name} ({ele.symbol})</h3>
+                    <p className='price-para'>Price: {ele.price_usd}</p>
                 </div>
-
+                ))};
             </div>
         </div>
     )
 }
 
-export default Top
+export default Top;
