@@ -12,6 +12,11 @@ function Top() {
         console.error(error);
       });
     },[]);
+
+    if (!cryptoArr || cryptoArr.length === 0) {
+        return <div>Loading...</div>;
+    }
+    
     return (
         <div className='top-container'>
             <h1>Top 10 Global Crypto Coins</h1>
