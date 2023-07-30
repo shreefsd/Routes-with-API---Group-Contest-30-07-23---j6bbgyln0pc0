@@ -14,7 +14,7 @@ function Top() {
     },[]);
 
     if (!cryptoArr || cryptoArr.length === 0) {
-        return <div>Loading...</div>;
+        return <div className='top-container'>Loading...</div>;
     }
     
     return (
