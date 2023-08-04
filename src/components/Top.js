@@ -21,7 +21,7 @@ function Top() {
                     <h3 className='coin-symbol'>{ele.name} ({ele.symbol})</h3>
                     <p className='price-para'>Price: {ele.price_usd}</p>
                 </div>
-                ))};
+                ))}
             </div>
         </div>
     )
